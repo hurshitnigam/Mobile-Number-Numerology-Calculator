@@ -38,6 +38,7 @@ export default function NameForm({
                 <input
                     className="input"
                     placeholder="First Name"
+                    required
                     value={first}
                     onChange={(e) =>
                         setFirst(
@@ -60,6 +61,7 @@ export default function NameForm({
                 <input
                     className="input"
                     placeholder="Last Name"
+                    required
                     value={last}
                     onChange={(e) =>
                         setLast(
@@ -71,6 +73,7 @@ export default function NameForm({
                 <input
                     className="input"
                     type="date"
+                    required
                     placeholder="Enter your DOB"
                     value={dob}
                     onChange={(e) =>
@@ -83,6 +86,7 @@ export default function NameForm({
                 <input
                     className="input"
                     placeholder="Mobile Number"
+                    required
                     value={mobile}
                     onChange={(e) =>
                         setMobile(

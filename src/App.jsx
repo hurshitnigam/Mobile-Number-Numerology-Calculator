@@ -47,6 +47,7 @@ const Problems = {
   "42": "ki patience to get achieve anything depression Modi nature negative thoughts self destruction brain is working 24 hours",
   "26": "not good for student",
   "62": "not good for student",
+  "27": "Good intuition, Joint pain Or Urine related disease, Arthritis (Vaat Issue)", 
   "28": "partnership not suitable depression mental problems in serial feeling jealous competitive feeling need to spend money on medicine ceiling leakage to marriages in family",
   "82": "partnership not suitable depression mental problems in serial feeling jealous competitive feeling need to spend money on medicine ceiling leakage to marriages in family",
   "34": "breathing issues child will not stay with parent heart related disease paralysis paralysis to sum in the family less confidence Stubborn",
@@ -61,10 +62,10 @@ const Problems = {
   "85": "Manish Tak block financial losses calculative mind person does not work related to money Finance tax about lacs and crores Bada sochte Hain Aise log money stuck",
   "68": "I just breast related problems issuing anyone organ of body surgical health problems suitable surgeon doctor this is known as operational number",
   "86": "I just breast related problems issuing anyone organ of body surgical health problems suitable surgeon doctor this is known as operational number",
-  "22": "",
-  "44": "",
-  "77": "",
-  "88": "",
+  "22": "Mood swing, Depression, to much Emotional, BP problem, If name starting with B,K, R than 100% Emotional issue",
+  "44": "Delay, Struggle, Headache",
+  "77": "Mood swings, Internal Disturbances, Spirituality, Over Thinking, Anxiety",
+  "88": "Delay, Disturbance, Obstacles",
 };
 
 function sumToSingle(num) {

@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+import {
+  FaMobileAlt,
+  FaUserAlt,
+} from "react-icons/fa";
+
 import NameForm from "./components/NameForm";
 import NameResult from "./components/NameResult";
 import MobileResult from "./components/MobileResult";
@@ -10,6 +16,102 @@ import { calculateBhagyank } from "./utils/calculateBhagyank";
 import { calculateMobile } from "./utils/calculateMobile";
 
 import { NUMBER_INFO } from "./data/numberInfo";
+
+<motion.section
+  initial={{
+    opacity: 0,
+    y: -50
+  }}
+
+  animate={{
+    opacity: 1,
+    y: 0
+  }}
+
+  transition={{
+    duration: 0.8
+  }}
+
+  style={{
+    padding: "60px 28px",
+
+    borderRadius: "28px",
+
+    background:
+      "linear-gradient(135deg,#4F46E5,#9333EA,#EC4899)",
+
+    color: "white",
+
+    marginBottom: "30px",
+
+    overflow: "hidden",
+
+    position: "relative",
+  }}
+>
+
+  <div
+    style={{
+      display: "flex",
+
+      justifyContent:
+        "center",
+
+      gap: "20px",
+
+      fontSize: "34px",
+
+      marginBottom:
+        "20px",
+    }}
+  >
+
+    <FaUserAlt />
+
+    <FaMobileAlt />
+
+  </div>
+
+  <h1
+    style={{
+      fontSize:
+        "clamp(30px,6vw,54px)",
+
+      fontWeight:
+        "800",
+
+      textAlign:
+        "center",
+    }}
+  >
+    Numerology
+    Calculator
+  </h1>
+
+  <p
+    style={{
+      marginTop:
+        "16px",
+
+      opacity:
+        ".9",
+
+      textAlign:
+        "center",
+
+      fontSize:
+        "18px",
+    }}
+  >
+
+    Unlock your
+    Name &
+    Mobile
+    Energy
+
+  </p>
+
+</motion.section>
 
 function App() {
   const [first, setFirst] =
@@ -148,6 +250,8 @@ function App() {
         onCalculate={
           handleCalculate
         }
+
+        setResult={setResult}
       />
 
       {result && (

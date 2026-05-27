@@ -1,5 +1,6 @@
 import React from "react";
 import NumberCard from "./NumberCard";
+import { motion } from "framer-motion";
 
 export default function NameResult({
     name,
@@ -25,8 +26,22 @@ export default function NameResult({
                 className="result-grid"
             >
 
-                <div
+                <motion.div
                     className="result-card"
+
+                    initial={{
+                        opacity: 0,
+                        y: 30
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        y: 0
+                    }}
+
+                    transition={{
+                        duration: .5
+                    }}
                 >
                     <h3>
                         Full Name
@@ -63,7 +78,7 @@ export default function NameResult({
                             }
                         </strong>
                     </p>
-                </div>
+                </motion.div>
 
                 <div
                     className="result-card"

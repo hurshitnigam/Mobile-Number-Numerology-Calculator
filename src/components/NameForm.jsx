@@ -12,6 +12,7 @@ export default function NameForm({
     mobile,
     setMobile,
     onCalculate,
+    setResult,
 }) {
     function handleReset() {
         setFirst("");
@@ -19,6 +20,7 @@ export default function NameForm({
         setLast("");
         setDob("");
         setMobile("");
+        setResult(null);
     }
 
     return (

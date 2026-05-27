@@ -71,6 +71,7 @@ export default function NameForm({
                 <input
                     className="input"
                     type="date"
+                    placeholder="Enter your DOB"
                     value={dob}
                     onChange={(e) =>
                         setDob(

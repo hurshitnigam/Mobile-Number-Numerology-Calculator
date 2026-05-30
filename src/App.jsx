@@ -16,6 +16,9 @@ import { calculateBhagyank } from "./utils/calculateBhagyank";
 import { calculateMobile } from "./utils/calculateMobile";
 
 import { NUMBER_INFO } from "./data/numberInfo";
+import { getCompatibility } from "./utils/calculateCompatibility";
+import CompatibilityCard from "./components/CompatibilityCard";
+import { generatePdf } from "./reports/generatePdf";
 
 <motion.section
   initial={{
@@ -159,12 +162,42 @@ function App() {
         mobile
       );
 
+    const namank =
+      name.full.reduced;
+
+    const compatibility = {
+      mulankNamank:
+        getCompatibility(
+          mulank.reduced,
+          namank
+        ),
+
+      bhagyankNamank:
+        getCompatibility(
+          bhagyank.reduced,
+          namank
+        ),
+
+      mulankMobile:
+        getCompatibility(
+          mulank.reduced,
+          mobileResult.reduced
+        ),
+
+      bhagyankMobile:
+        getCompatibility(
+          bhagyank.reduced,
+          mobileResult.reduced
+        ),
+    };
+
     setResult({
       name,
       mulank,
       bhagyank,
       mobile:
         mobileResult,
+      compatibility,
     });
   }
 
@@ -281,47 +314,55 @@ function App() {
             }
           />
 
+          <CompatibilityCard
+            compatibility={
+              result.compatibility
+            }
+          />
+
           <div
             className="card"
             style={{
-              marginTop:
-                "32px",
-
-              textAlign:
-                "center",
+              marginTop: "32px",
+              textAlign: "center",
             }}
           >
-
             <h2>
-              Final
-              Guidance
+              Final Guidance
             </h2>
 
             <br />
 
             <p>
-              Mobile
-              numerology
-              should be
-              interpreted
-              together
-              with
+              Mobile numerology
+              should be interpreted
+              together with
               Mulank,
               Bhagyank
-              and Full
-              Name.
+              and Full Name.
             </p>
 
             <br />
 
             <strong>
-              Ask expert
-              before
-              changing
-              mobile
+              Ask expert before
+              changing mobile
               number
             </strong>
 
+            <br />
+            <br />
+
+            <button
+              className="btn"
+              onClick={() =>
+                generatePdf(
+                  result
+                )
+              }
+            >
+              📄 Download PDF Report
+            </button>
           </div>
 
         </>

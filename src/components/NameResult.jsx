@@ -16,44 +16,32 @@ export default function NameResult({
                 marginTop: "32px",
             }}
         >
-            <h2
-                className="section-title"
-            >
+            <h2 className="section-title">
                 Name Analysis
             </h2>
 
-            <div
-                className="result-grid"
-            >
+            <div className="result-grid">
 
+                {/* Full Name */}
                 <motion.div
                     className="result-card"
-
                     initial={{
                         opacity: 0,
-                        y: 30
+                        y: 30,
                     }}
-
                     whileInView={{
                         opacity: 1,
-                        y: 0
+                        y: 0,
                     }}
-
                     transition={{
-                        duration: .5
+                        duration: 0.5,
                     }}
                 >
-                    <h3>
-                        Full Name
-                    </h3>
+                    <h3>Full Name</h3>
 
                     <br />
 
-                    <p>
-                        {
-                            name.fullName
-                        }
-                    </p>
+                    <p>{name.fullName}</p>
 
                     <br />
 
@@ -61,10 +49,7 @@ export default function NameResult({
                         Total:
                         <strong>
                             {" "}
-                            {
-                                name.full
-                                    .raw
-                            }
+                            {name.full.raw}
                         </strong>
                     </p>
 
@@ -72,137 +57,148 @@ export default function NameResult({
                         Reduced:
                         <strong>
                             {" "}
-                            {
-                                name.full
-                                    .reduced
-                            }
+                            {name.full.reduced}
                         </strong>
                     </p>
                 </motion.div>
 
-                <div
+                {/* Name Breakdown */}
+                <motion.div
                     className="result-card"
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.6,
+                    }}
                 >
-                    <h3>
-                        Name Breakdown
-                    </h3>
+                    <h3>Name Breakdown</h3>
 
                     <br />
 
                     <p>
-                        First:
-                        {" "}
-                        {
-                            name.first
-                                .raw
-                        }
-                        →
-                        {
-                            name.first
-                                .reduced
-                        }
+                        First: {name.first.raw} →{" "}
+                        {name.first.reduced}
                     </p>
 
                     <p>
-                        Middle:
-                        {" "}
-                        {
-                            name.middle
-                                .raw
-                        }
-                        →
-                        {
-                            name.middle
-                                .reduced
-                        }
+                        Middle: {name.middle.raw} →{" "}
+                        {name.middle.reduced}
                     </p>
 
                     <p>
-                        Last:
-                        {" "}
-                        {
-                            name.last
-                                .raw
-                        }
-                        →
-                        {
-                            name.last
-                                .reduced
-                        }
+                        Last: {name.last.raw} →{" "}
+                        {name.last.reduced}
                     </p>
+                </motion.div>
 
-                </div>
-
-                <div
+                {/* Mulank */}
+                <motion.div
                     className="result-card"
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.7,
+                    }}
                 >
-                    <h3>
-                        Mulank
-                    </h3>
+                    <h3>Mulank</h3>
 
                     <br />
 
                     <p>
-                        Raw:
-                        {
-                            mulank.raw
-                        }
+                        Raw: {mulank.raw}
                     </p>
 
                     <p>
-                        Reduced:
-                        {
-                            mulank.reduced
-                        }
+                        Reduced:{" "}
+                        {mulank.reduced}
                     </p>
-                </div>
+                </motion.div>
 
-                <div
+                {/* Bhagyank */}
+                <motion.div
                     className="result-card"
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.8,
+                    }}
                 >
-                    <h3>
-                        Bhagyank
-                    </h3>
+                    <h3>Bhagyank</h3>
 
                     <br />
 
                     <p>
-                        Raw:
-                        {
-                            bhagyank.raw
-                        }
+                        Raw: {bhagyank.raw}
                     </p>
 
                     <p>
-                        Reduced:
-                        {
-                            bhagyank
-                                .reduced
-                        }
+                        Reduced:{" "}
+                        {bhagyank.reduced}
                     </p>
-                </div>
+                </motion.div>
+
+                {/* Namank */}
+                <motion.div
+                    className="result-card"
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.9,
+                    }}
+                >
+                    <h3>Namank</h3>
+
+                    <br />
+
+                    <p>
+                        Raw: {name.full.raw}
+                    </p>
+
+                    <p>
+                        Reduced:{" "}
+                        {name.full.reduced}
+                    </p>
+                </motion.div>
 
             </div>
 
+            {/* Number Details */}
             <div
                 style={{
-                    marginTop:
-                        "24px",
-
-                    display:
-                        "grid",
-
-                    gap:
-                        "20px",
+                    marginTop: "24px",
+                    display: "grid",
+                    gap: "20px",
                 }}
             >
-
                 <NumberCard
                     title="Mulank Details"
                     data={
                         numberInfo[
-                        mulank
-                            .reduced
+                        mulank.reduced
                         ]
                     }
                 />
@@ -211,14 +207,20 @@ export default function NameResult({
                     title="Bhagyank Details"
                     data={
                         numberInfo[
-                        bhagyank
-                            .reduced
+                        bhagyank.reduced
                         ]
                     }
                 />
 
+                <NumberCard
+                    title="Namank Details"
+                    data={
+                        numberInfo[
+                        name.full.reduced
+                        ]
+                    }
+                />
             </div>
-
         </div>
     );
 }

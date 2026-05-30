@@ -1,7 +1,7 @@
 import React from "react";
 import NumberCard from "./NumberCard";
 import { motion } from "framer-motion";
-
+motion
 export default function NameResult({
     name,
     mulank,

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { motion } from "framer-motion";
+motion
 import {
   FaMobileAlt,
   FaUserAlt,
@@ -187,6 +188,12 @@ function App() {
       bhagyankMobile:
         getCompatibility(
           bhagyank.reduced,
+          mobileResult.reduced
+        ),
+
+      namankMobile:
+        getCompatibility(
+          namank,
           mobileResult.reduced
         ),
     };

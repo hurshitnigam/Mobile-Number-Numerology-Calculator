@@ -18,57 +18,55 @@ export default function CompatibilityCard({
             <br />
 
             <div>
+                <div className="compatibility-row">
+                    <span>Mulank ↔ Namank</span>
 
-                <p>
-                    Mulank ↔ Namank :
                     <span
                         className={`badge ${compatibility.mulankNamank.color}`}
                     >
-                        {
-                            compatibility.mulankNamank.status
-                        }
+                        {compatibility.mulankNamank.status}
                     </span>
-                </p>
+                </div>
 
-                <br />
+                <div className="compatibility-row">
+                    <span>Bhagyank ↔ Namank</span>
 
-                <p>
-                    Bhagyank ↔ Namank :
                     <span
                         className={`badge ${compatibility.bhagyankNamank.color}`}
                     >
-                        {
-                            compatibility.bhagyankNamank.status
-                        }
+                        {compatibility.bhagyankNamank.status}
                     </span>
-                </p>
+                </div>
 
-                <br />
+                <div className="compatibility-row">
+                    <span>Mulank ↔ Mobile</span>
 
-                <p>
-                    Mulank ↔ Mobile :
                     <span
                         className={`badge ${compatibility.mulankMobile.color}`}
                     >
-                        {
-                            compatibility.mulankMobile.status
-                        }
+                        {compatibility.mulankMobile.status}
                     </span>
-                </p>
+                </div>
 
-                <br />
+                <div className="compatibility-row">
+                    <span>Bhagyank ↔ Mobile</span>
 
-                <p>
-                    Bhagyank ↔ Mobile :
                     <span
                         className={`badge ${compatibility.bhagyankMobile.color}`}
                     >
-                        {
-                            compatibility.bhagyankMobile.status
-                        }
+                        {compatibility.bhagyankMobile.status}
                     </span>
-                </p>
+                </div>
 
+                <div className="compatibility-row">
+                    <span>Namank ↔ Mobile</span>
+
+                    <span
+                        className={`badge ${compatibility.namankMobile.color}`}
+                    >
+                        {compatibility.namankMobile.status}
+                    </span>
+                </div>
             </div>
         </div>
     );

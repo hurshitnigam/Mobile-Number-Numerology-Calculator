@@ -128,6 +128,30 @@ body {
   background: #fee2e2;
 }
 
+.compatibility-row {
+  display: grid;
+  grid-template-columns: 220px auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #ececec;
+}
+
+.compatibility-row:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .compatibility-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .card {
     padding: 18px;

@@ -130,7 +130,10 @@ body {
 
 .compatibility-row {
   display: grid;
-  grid-template-columns: 220px auto;
+
+  grid-template-columns:
+    260px
+    max-content;
 
   align-items: center;
 
@@ -147,8 +150,15 @@ body {
 
 @media (max-width: 768px) {
   .compatibility-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    display: grid;
+
+    grid-template-columns:
+      minmax(140px, 1fr)
+      max-content;
+
+    gap: 12px;
+
+    align-items: center;
   }
 }
 

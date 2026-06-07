@@ -101,7 +101,7 @@ export default function MobileResult({
                     marginTop: "24px",
                 }}
             >
-                
+
                 {/* Positive Pair Benefits */}
                 <div className="result-card">
                     <h3>
@@ -263,6 +263,61 @@ export default function MobileResult({
                     )}
 
                 </div>
+
+                {
+                    mobile.notRecommended?.length > 0 && (
+
+                        <div className="result-card"       
+                            style={{
+                            marginTop: "32px",
+                          }}>
+
+                            <h3>
+                                Not Recommended Numbers
+                            </h3>
+
+                            <br />
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    gap: "10px",
+                                }}
+                            >
+
+                                {
+                                    mobile.notRecommended.map(
+                                        (item) => (
+                                            <span
+                                                key={item}
+                                                className="badge negative"
+                                            >
+                                                {item}
+                                            </span>
+                                        )
+                                    )
+                                }
+
+                            </div>
+
+                            <br />
+
+                            {/* <p
+                                style={{
+                                    color: "#dc2626",
+                                    fontWeight: "500",
+                                }}
+                            >
+                                These combinations are
+                                considered not recommended
+                                in Mobile Numerology.
+                            </p> */}
+
+                        </div>
+
+                    )
+                }
             </div>
         </div>
     );

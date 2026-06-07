@@ -1,10 +1,9 @@
 export const POSITIVE_PAIRS = [
+  "12",
+  "13",
+  "31",
   "15",
   "51",
-  "17",
-  "71",
-  "19",
-  "91",
   "25",
   "52",
   "29",
@@ -17,30 +16,20 @@ export const POSITIVE_PAIRS = [
   "74",
   "57",
   "75",
-  "35",
-  "53",
-  "36",
-  "63",
-  "39",
-  "93",
-  "59",
-  "95",
-  "67",
-  "76",
   "69",
   "96",
   "78",
   "87",
-  "89",
-  "98",
-  "11",
   "33",
   "55",
   "66",
-  "99",
 ];
 
 export const NEUTRAL_PAIRS = [
+  "17",
+  "71",
+  "19",
+  "91",
   "21",
   "24",
   "42",
@@ -56,6 +45,8 @@ export const NEUTRAL_PAIRS = [
   "65",
   "58",
   "85",
+  "59",
+  "95",
   "79",
   "97",
 ];
@@ -89,57 +80,11 @@ export const NEGATIVE_PAIRS = [
   "86",
   "89",
   "98",
+  "11",
   "22",
   "44",
   "77",
   "88",
+  "99",
 ];
 
-export const PROBLEMS = {
-  14: "Loan liabilities, legal notice, health issues, hard work",
-  41: "Loan liabilities, legal notice, health issues, hard work",
-
-  16: "Spouse health issue, marriage delay, income limitations",
-  61: "Spouse health issue, marriage delay, income limitations",
-
-  18: "Government issue, father relation issues, job changes",
-  81: "Government issue, father relation issues, job changes",
-
-  23: "Many enemies but limited harm",
-  32: "Many enemies but limited harm",
-
-  26: "Barrier in studies, education break",
-  62: "Barrier in studies, education break",
-
-  27: "Joint pain, urine issue, arthritis",
-  72: "Joint pain, urine issue, arthritis",
-
-  28: "Hospital expenses, relationship issues",
-  82: "Hospital expenses, relationship issues",
-
-  34: "Breathing issues, family struggle",
-  43: "Breathing issues, family struggle",
-
-  45: "Hospital and court visits",
-  54: "Hospital and court visits",
-
-  46: "Extra relationship, UTI issues",
-  64: "Extra relationship, UTI issues",
-
-  48: "Blood issue, incurable disease",
-  84: "Blood issue, incurable disease",
-
-  67: "Spouse health issue",
-  76: "Spouse health issue",
-
-  68: "Eye issue, organ issue",
-  86: "Eye issue, organ issue",
-
-  89: "Arguments, chronic issue",
-  98: "Arguments, chronic issue",
-
-  22: "Mood swings, depression",
-  44: "Delay and struggle",
-  77: "Overthinking and anxiety",
-  88: "Obstacles and disturbance",
-};

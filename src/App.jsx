@@ -1,11 +1,8 @@
 import { useState } from "react";
 
 import { motion } from "framer-motion";
-motion
-import {
-  FaMobileAlt,
-  FaUserAlt,
-} from "react-icons/fa";
+motion;
+import { FaMobileAlt, FaUserAlt } from "react-icons/fa";
 
 import NameForm from "./components/NameForm";
 import NameResult from "./components/NameResult";
@@ -24,25 +21,21 @@ import { generatePdf } from "./reports/generatePdf";
 <motion.section
   initial={{
     opacity: 0,
-    y: -50
+    y: -50,
   }}
-
   animate={{
     opacity: 1,
-    y: 0
+    y: 0,
   }}
-
   transition={{
-    duration: 0.8
+    duration: 0.8,
   }}
-
   style={{
     padding: "60px 28px",
 
     borderRadius: "28px",
 
-    background:
-      "linear-gradient(135deg,#4F46E5,#9333EA,#EC4899)",
+    background: "linear-gradient(135deg,#4F46E5,#9333EA,#EC4899)",
 
     color: "white",
 
@@ -53,279 +46,179 @@ import { generatePdf } from "./reports/generatePdf";
     position: "relative",
   }}
 >
-
   <div
     style={{
       display: "flex",
 
-      justifyContent:
-        "center",
+      justifyContent: "center",
 
       gap: "20px",
 
       fontSize: "34px",
 
-      marginBottom:
-        "20px",
+      marginBottom: "20px",
     }}
   >
-
     <FaUserAlt />
 
     <FaMobileAlt />
-
   </div>
 
   <h1
     style={{
-      fontSize:
-        "clamp(30px,6vw,54px)",
+      fontSize: "clamp(30px,6vw,54px)",
 
-      fontWeight:
-        "800",
+      fontWeight: "800",
 
-      textAlign:
-        "center",
+      textAlign: "center",
     }}
   >
-    Numerology
-    Calculator
+    Numerology Calculator
   </h1>
 
   <p
     style={{
-      marginTop:
-        "16px",
+      marginTop: "16px",
 
-      opacity:
-        ".9",
+      opacity: ".9",
 
-      textAlign:
-        "center",
+      textAlign: "center",
 
-      fontSize:
-        "18px",
+      fontSize: "18px",
     }}
   >
-
-    Unlock your
-    Name &
-    Mobile
-    Energy
-
+    Unlock your Name & Mobile Energy
   </p>
-
-</motion.section>
+</motion.section>;
 
 function App() {
-  const [first, setFirst] =
-    useState("");
+  const [first, setFirst] = useState("");
 
-  const [middle, setMiddle] =
-    useState("");
+  const [middle, setMiddle] = useState("");
 
-  const [last, setLast] =
-    useState("");
+  const [last, setLast] = useState("");
 
-  const [dob, setDob] =
-    useState("");
+  const [dob, setDob] = useState("");
 
-  const [mobile, setMobile] =
-    useState("");
+  const [mobile, setMobile] = useState("");
 
-  const [result, setResult] =
-    useState(null);
+  const [result, setResult] = useState(null);
 
-  function handleCalculate(
-    e
-  ) {
+  function handleCalculate(e) {
     e.preventDefault();
 
-    const name =
-      calculateName(
-        first,
-        middle,
-        last
-      );
+    if (mobile.trim().length !== 10) {
+      alert("Please enter a valid 10 digit mobile number");
+      return;
+    }
 
-    const mulank =
-      calculateMulank(
-        dob
-      );
+    const name = calculateName(first, middle, last);
 
-    const bhagyank =
-      calculateBhagyank(
-        dob
-      );
+    const mulank = calculateMulank(dob);
 
-    const mobileResult =
-      calculateMobile(
-        mobile
-      );
+    const bhagyank = calculateBhagyank(dob);
 
-    const namank =
-      name.full.reduced;
+    const mobileResult = calculateMobile(mobile);
+
+    const namank = name.full.reduced;
 
     const compatibility = {
-      mulankNamank:
-        getCompatibility(
-          mulank.reduced,
-          namank
-        ),
+      mulankNamank: getCompatibility(mulank.reduced, namank),
 
-      bhagyankNamank:
-        getCompatibility(
-          bhagyank.reduced,
-          namank
-        ),
+      bhagyankNamank: getCompatibility(bhagyank.reduced, namank),
 
-      mulankMobile:
-        getCompatibility(
-          mulank.reduced,
-          mobileResult.reduced
-        ),
+      mulankMobile: getCompatibility(mulank.reduced, mobileResult.reduced),
 
-      bhagyankMobile:
-        getCompatibility(
-          bhagyank.reduced,
-          mobileResult.reduced
-        ),
+      bhagyankMobile: getCompatibility(bhagyank.reduced, mobileResult.reduced),
 
-      namankMobile:
-        getCompatibility(
-          namank,
-          mobileResult.reduced
-        ),
+      namankMobile: getCompatibility(namank, mobileResult.reduced),
     };
 
     setResult({
       name,
       mulank,
       bhagyank,
-      mobile:
-        mobileResult,
+      mobile: mobileResult,
       compatibility,
     });
   }
 
   return (
-    <div
-      className="container"
-    >
-
+    <div className="container">
       <section
         style={{
-          padding:
-            "60px 30px",
-
-          borderRadius:
-            "26px",
-
-          background:
-            "linear-gradient(135deg,#5B4DFF,#7C3AED)",
-
-          color:
-            "white",
-
-          textAlign:
-            "center",
-
-          marginBottom:
-            "32px",
+          padding: "60px 30px",
+          borderRadius: "26px",
+          background: "linear-gradient(135deg,#5B4DFF,#7C3AED)",
+          color: "white",
+          textAlign: "center",
+          marginBottom: "32px",
         }}
       >
+        <p
+          style={{
+            fontSize: "24px",
+            letterSpacing: "4px",
+            textTransform: "uppercase",
+            fontWeight: "600",
+            opacity: 0.9,
+            marginBottom: "14px",
+          }}
+        >
+          COSMIC COUNSELLOR
+        </p>
 
         <h1
           style={{
-            fontSize:
-              "42px",
-
-            marginBottom:
-              "16px",
+            fontSize: "clamp(18px, 5vw, 28px)",
+            marginBottom: "16px",
+            fontWeight: "700",
           }}
         >
-          Mobile Number
-          Numerology
+          Advanced Mobile Number Numerology
         </h1>
 
         <p
           style={{
-            opacity:
-              0.9,
-
-            maxWidth:
-              "700px",
-
-            margin:
-              "0 auto",
+            opacity: 0.9,
+            maxWidth: "700px",
+            margin: "0 auto",
+            fontSize: "18px",
+            lineHeight: "1.6",
           }}
         >
-          Discover your
-          Name Energy,
-          Mulank,
-          Bhagyank
-          and Mobile
-          Number
+          Discover your Name Energy, Mulank, Bhagyank and complete Mobile Number
           Analysis.
         </p>
-
       </section>
 
       <NameForm
         first={first}
         setFirst={setFirst}
-
         middle={middle}
         setMiddle={setMiddle}
-
         last={last}
         setLast={setLast}
-
         dob={dob}
         setDob={setDob}
-
         mobile={mobile}
         setMobile={setMobile}
-
-        onCalculate={
-          handleCalculate
-        }
-
+        onCalculate={handleCalculate}
         setResult={setResult}
       />
 
       {result && (
         <>
-
           <NameResult
-            name={
-              result.name
-            }
-
-            mulank={
-              result.mulank
-            }
-
-            bhagyank={
-              result.bhagyank
-            }
-
-            numberInfo={
-              NUMBER_INFO
-            }
+            name={result.name}
+            mulank={result.mulank}
+            bhagyank={result.bhagyank}
+            numberInfo={NUMBER_INFO}
           />
 
-          <MobileResult
-            mobile={
-              result.mobile
-            }
-          />
+          <MobileResult mobile={result.mobile} />
 
-          <CompatibilityCard
-            compatibility={
-              result.compatibility
-            }
-          />
+          <CompatibilityCard compatibility={result.compatibility} />
 
           <div
             className="card"
@@ -334,67 +227,42 @@ function App() {
               textAlign: "center",
             }}
           >
-            <h2>
-              Final Guidance
-            </h2>
+            <h2>Final Guidance</h2>
 
             <br />
 
             <p>
-              Mobile numerology
-              should be interpreted
-              together with
-              Mulank,
-              Bhagyank
-              and Full Name.
+              Mobile numerology should be interpreted together with Mulank,
+              Bhagyank and Full Name.
             </p>
 
             <br />
 
-            <strong>
-              Ask expert before
-              changing mobile
-              number
-            </strong>
+            <strong>Ask expert before changing mobile number</strong>
 
             <br />
             <br />
 
-            <button
-              className="btn"
-              onClick={() =>
-                generatePdf(
-                  result
-                )
-              }
-            >
+            <button className="btn" onClick={() => generatePdf(result)}>
               📄 Download PDF Report
             </button>
           </div>
-
         </>
       )}
 
       <footer
         style={{
-          marginTop:
-            "50px",
+          marginTop: "50px",
 
-          textAlign:
-            "center",
+          textAlign: "center",
 
-          color:
-            "#777",
+          color: "#777",
 
-          padding:
-            "24px",
+          padding: "24px",
         }}
       >
-        © 2026 Mobile
-        Numerology
-        Calculator
+        © 2026 Mobile Numerology Calculator
       </footer>
-
     </div>
   );
 }

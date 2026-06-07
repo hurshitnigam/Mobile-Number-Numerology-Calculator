@@ -1,226 +1,172 @@
 import React from "react";
 import NumberCard from "./NumberCard";
 import { motion } from "framer-motion";
-motion
-export default function NameResult({
-    name,
-    mulank,
-    bhagyank,
-    numberInfo,
-}) {
-    if (!name) return null;
+motion;
+export default function NameResult({ name, mulank, bhagyank, numberInfo }) {
+  if (!name) return null;
 
-    return (
-        <div
-            style={{
-                marginTop: "32px",
-            }}
+  return (
+    <div
+      style={{
+        marginTop: "32px",
+      }}
+    >
+      <h2 className="section-title">Name Analysis</h2>
+
+      <div className="result-grid">
+        {/* Full Name */}
+        <motion.div
+          className="result-card"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
         >
-            <h2 className="section-title">
-                Name Analysis
-            </h2>
+          <h3>Full Name</h3>
 
-            <div className="result-grid">
+          <br />
 
-                {/* Full Name */}
-                <motion.div
-                    className="result-card"
-                    initial={{
-                        opacity: 0,
-                        y: 30,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.5,
-                    }}
-                >
-                    <h3>Full Name</h3>
+          <p>{name.fullName}</p>
 
-                    <br />
+          <br />
 
-                    <p>{name.fullName}</p>
+          <p>
+            Total:
+            <strong> {name.full.raw}</strong>
+          </p>
 
-                    <br />
+          <p>
+            Reduced:
+            <strong> {name.full.reduced}</strong>
+          </p>
+        </motion.div>
 
-                    <p>
-                        Total:
-                        <strong>
-                            {" "}
-                            {name.full.raw}
-                        </strong>
-                    </p>
+        {/* Name Breakdown */}
+        <motion.div
+          className="result-card"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+        >
+          <h3>Name Breakdown</h3>
 
-                    <p>
-                        Reduced:
-                        <strong>
-                            {" "}
-                            {name.full.reduced}
-                        </strong>
-                    </p>
-                </motion.div>
+          <br />
 
-                {/* Name Breakdown */}
-                <motion.div
-                    className="result-card"
-                    initial={{
-                        opacity: 0,
-                        y: 30,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.6,
-                    }}
-                >
-                    <h3>Name Breakdown</h3>
+          <p>
+            First: {name.first.raw} → {name.first.reduced}
+          </p>
 
-                    <br />
+          <p>
+            Middle: {name.middle.raw} → {name.middle.reduced}
+          </p>
 
-                    <p>
-                        First: {name.first.raw} →{" "}
-                        {name.first.reduced}
-                    </p>
+          <p>
+            Last: {name.last.raw} → {name.last.reduced}
+          </p>
+        </motion.div>
 
-                    <p>
-                        Middle: {name.middle.raw} →{" "}
-                        {name.middle.reduced}
-                    </p>
+        {/* Mulank */}
+        <motion.div
+          className="result-card"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+        >
+          <h3>Mulank</h3>
 
-                    <p>
-                        Last: {name.last.raw} →{" "}
-                        {name.last.reduced}
-                    </p>
-                </motion.div>
+          <br />
 
-                {/* Mulank */}
-                <motion.div
-                    className="result-card"
-                    initial={{
-                        opacity: 0,
-                        y: 30,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.7,
-                    }}
-                >
-                    <h3>Mulank</h3>
+          <p>Raw: {mulank.raw}</p>
 
-                    <br />
+          <p>Reduced: {mulank.reduced}</p>
+        </motion.div>
 
-                    <p>
-                        Raw: {mulank.raw}
-                    </p>
+        {/* Bhagyank */}
+        <motion.div
+          className="result-card"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+        >
+          <h3>Bhagyank</h3>
 
-                    <p>
-                        Reduced:{" "}
-                        {mulank.reduced}
-                    </p>
-                </motion.div>
+          <br />
 
-                {/* Bhagyank */}
-                <motion.div
-                    className="result-card"
-                    initial={{
-                        opacity: 0,
-                        y: 30,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.8,
-                    }}
-                >
-                    <h3>Bhagyank</h3>
+          <p>Raw: {bhagyank.raw}</p>
 
-                    <br />
+          <p>Reduced: {bhagyank.reduced}</p>
+        </motion.div>
 
-                    <p>
-                        Raw: {bhagyank.raw}
-                    </p>
+        {/* Namank */}
+        <motion.div
+          className="result-card"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.9,
+          }}
+        >
+          <h3>Namank</h3>
 
-                    <p>
-                        Reduced:{" "}
-                        {bhagyank.reduced}
-                    </p>
-                </motion.div>
+          <br />
 
-                {/* Namank */}
-                <motion.div
-                    className="result-card"
-                    initial={{
-                        opacity: 0,
-                        y: 30,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.9,
-                    }}
-                >
-                    <h3>Namank</h3>
+          <p>Raw: {name.full.raw}</p>
 
-                    <br />
+          <p>Reduced: {name.full.reduced}</p>
+        </motion.div>
+      </div>
 
-                    <p>
-                        Raw: {name.full.raw}
-                    </p>
+      {/* Number Details */}
+      <div className="details-grid">
+        <NumberCard title="Mulank Details" data={numberInfo[mulank.reduced]} />
 
-                    <p>
-                        Reduced:{" "}
-                        {name.full.reduced}
-                    </p>
-                </motion.div>
+        <NumberCard
+          title="Bhagyank Details"
+          data={numberInfo[bhagyank.reduced]}
+        />
 
-            </div>
-
-            {/* Number Details */}
-            <div
-                style={{
-                    marginTop: "24px",
-                    display: "grid",
-                    gap: "20px",
-                }}
-            >
-                <NumberCard
-                    title="Mulank Details"
-                    data={
-                        numberInfo[
-                        mulank.reduced
-                        ]
-                    }
-                />
-
-                <NumberCard
-                    title="Bhagyank Details"
-                    data={
-                        numberInfo[
-                        bhagyank.reduced
-                        ]
-                    }
-                />
-
-                <NumberCard
-                    title="Namank Details"
-                    data={
-                        numberInfo[
-                        name.full.reduced
-                        ]
-                    }
-                />
-            </div>
-        </div>
-    );
+        <NumberCard
+          title="Namank Details"
+          data={numberInfo[name.full.reduced]}
+        />
+      </div>
+    </div>
+  );
 }

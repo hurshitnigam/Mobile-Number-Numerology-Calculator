@@ -1,66 +1,77 @@
 import React from "react";
 
-export default function NumberCard({
-    title,
-    data,
-}) {
-    if (!data)
-        return null;
+export default function NumberCard({ title, data }) {
+  if (!data) return null;
 
-    return (
-        <div
-            className="result-card"
+  return (
+    <div className="result-card">
+      <h3>{title}</h3>
+
+      <br />
+
+      <p>
+        <strong>Personality</strong>
+
+        <br />
+        <br />
+
+        {data.personality.english}
+
+        <br />
+
+        <span
+          style={{
+            color: "#666",
+            lineHeight: "1.7",
+          }}
         >
+          {data.personality.hindi}
+        </span>
+      </p>
 
-            <h3>
-                {title}
-            </h3>
+      <br />
 
-            <br />
+      <p>
+        <strong>Career</strong>
 
-            <p>
-                <strong>
-                    Personality
-                </strong>
+        <br />
+        <br />
 
-                <br />
+        {data.career.english}
 
-                {
-                    data
-                        .personality
-                }
-            </p>
+        <br />
 
-            <br />
+        <span
+          style={{
+            color: "#666",
+            lineHeight: "1.7",
+          }}
+        >
+          {data.career.hindi}
+        </span>
+      </p>
 
-            <p>
-                <strong>
-                    Career
-                </strong>
+      <br />
 
-                <br />
+      <p>
+        <strong>Challenge</strong>
 
-                {
-                    data
-                        .career
-                }
-            </p>
+        <br />
+        <br />
 
-            <br />
+        {data.challenge.english}
 
-            <p>
-                <strong>
-                    Challenge
-                </strong>
+        <br />
 
-                <br />
-
-                {
-                    data
-                        .challenge
-                }
-            </p>
-
-        </div>
-    );
+        <span
+          style={{
+            color: "#666",
+            lineHeight: "1.7",
+          }}
+        >
+          {data.challenge.hindi}
+        </span>
+      </p>
+    </div>
+  );
 }

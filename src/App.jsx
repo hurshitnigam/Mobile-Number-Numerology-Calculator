@@ -149,7 +149,7 @@ function App() {
         style={{
           padding: "60px 30px",
           borderRadius: "26px",
-          background: "linear-gradient(135deg,#5B4DFF,#7C3AED)",
+          background: "linear-gradient(135deg, #1e1b4b, #312e81, #581c87)",
           color: "white",
           textAlign: "center",
           marginBottom: "32px",
@@ -165,7 +165,7 @@ function App() {
             marginBottom: "14px",
           }}
         >
-          COSMIC COUNSELLOR
+          COSMIC COUNSELLAOR
         </p>
 
         <h1
@@ -175,7 +175,7 @@ function App() {
             fontWeight: "700",
           }}
         >
-          Advanced Mobile Number Numerology
+          Advance Mobile Number Numerology
         </h1>
 
         <p
@@ -251,17 +251,69 @@ function App() {
       )}
 
       <footer
+        className="footer"
         style={{
-          marginTop: "50px",
-
-          textAlign: "center",
-
-          color: "#777",
-
-          padding: "24px",
+          marginTop: "100px",
         }}
       >
-        © 2026 Mobile Numerology Calculator
+        <div className="footer-content">
+          <div className="footer-image">
+            <img src="/public/cosmic-counsellor.jpeg" alt="Cosmic Counsellor" />
+          </div>
+
+          <div className="footer-details">
+            <h2 className="footer-title">COSMIC COUNSELLAOR</h2>
+
+            <h3 className="footer-name">Vivek Nigam</h3>
+
+            <p className="footer-role">( Numerologist, Astrologer, Vastu Expert )</p>
+
+            <p className="about">
+              Advance Mobile Number Numerology Analysis based on Mulank,
+              Bhagyank, Namank and Mobile Number combinations. Get detailed
+              insights about your strengths, challenges, compatibility and
+              mobile number vibrations.
+            </p>
+
+            <p>
+              💬 WhatsApp:
+              <a
+                href="https://wa.me/919450122288"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +91 9450122288
+              </a>
+            </p>
+
+            <p>
+              📧 Email:
+              <a href="mailto:mr.bhanunig@gmail.com">mr.bhanunig@gmail.com</a>
+            </p>
+
+            <p>
+              📸 Instagram:
+              <a
+                href="https://www.instagram.com/thecosmiccounselaor/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @thecosmiccounselaor
+              </a>
+            </p>
+
+            <p>👍 Facebook: Astro Vivek G</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>
+            Disclaimer: Numerology guidance is intended for informational and
+            self-reflection purposes only.
+          </p>
+
+          <p>© 2026 Cosmic Counsellaor. All Rights Reserved.</p>
+        </div>
       </footer>
     </div>
   );

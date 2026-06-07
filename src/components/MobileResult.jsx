@@ -54,7 +54,7 @@ export default function MobileResult({ mobile }) {
 
         {/* All Pairs */}
 
-        <div className="result-card">
+        {/* <div className="result-card">
           <h3>All Pairs</h3>
 
           <br />
@@ -72,7 +72,7 @@ export default function MobileResult({ mobile }) {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Positive Pairs */}

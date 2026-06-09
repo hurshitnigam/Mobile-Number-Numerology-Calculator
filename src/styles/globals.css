@@ -384,6 +384,113 @@ body {
   line-height: 1.8;
 }
 
+.consultation-section {
+  margin-top: 50px;
+}
+
+.consultation-title {
+  text-align: center;
+
+  font-size: 32px;
+
+  color: #ffd700;
+
+  margin-bottom: 30px;
+
+  font-weight: 700;
+}
+
+.consultation-card {
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 24px;
+
+  padding: 30px;
+}
+
+.service-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.service-list li {
+  position: relative;
+
+  padding-left: 40px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding-bottom: 18px;
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+.service-list li::before {
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 26px;
+
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffd700;
+
+  color: #1e1b4b;
+
+  border-radius: 50%;
+
+  font-weight: 700;
+
+  font-size: 14px;
+}
+
+.service-list strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  margin-bottom: 6px;
+
+  line-height: 1.5;
+}
+
+.service-list span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
 .blessing-card {
   margin-top: 40px;
 

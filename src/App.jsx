@@ -22,7 +22,7 @@ import { calculateMobile } from "./utils/calculateMobile";
 import { NUMBER_INFO } from "./data/numberInfo";
 import { getCompatibility } from "./utils/calculateCompatibility";
 import CompatibilityCard from "./components/CompatibilityCard";
-import { generatePdf } from "./reports/generatePdf";
+// import { generatePdf } from "./reports/generatePdf";
 
 <motion.section
   initial={{
@@ -335,52 +335,54 @@ function App() {
                 Astro Vivek G
               </a>
             </p>
-
           </div>
         </div>
 
         <div className="footer-bottom">
           <div className="consultation-section">
             <h3 className="consultation-title">
-              ज्योतिष परामर्श / Astrology Consultation
+              🔮 ज्योतिष परामर्श / Astrology Consultation
             </h3>
 
-            <div className="consultation-grid">
-              <div className="consultation-card">
-                <ul>
-                  <li>कुण्डली विश्लेषण एवं जीवन मार्गदर्शन</li>
-                  <li>शिक्षा, कैरियर, विवाह एवं स्वास्थ्य परामर्श</li>
-                  <li>धन, मुकदमा एवं प्रॉपर्टी संबंधी मार्गदर्शन</li>
-                  <li>नाम एवं स्पेलिंग सुधार</li>
-                  <li>जन्मतिथि अनुसार मोबाइल नम्बर चयन</li>
-                  <li>कम खर्च वाले आसान उपाय</li>
-                  <li>शुभ कार्यों हेतु मुहूर्त विचार</li>
-                </ul>
-              </div>
+            <div className="consultation-card">
+              <ul className="service-list">
+                <li>
+                  <strong>कुण्डली विश्लेषण एवं जीवन मार्गदर्शन</strong>
+                  <span>Horoscope Analysis & Life Guidance</span>
+                </li>
 
-              <div className="consultation-card">
-                <ul>
-                  <li>Horoscope analysis and guidance</li>
-                  <li>Education, career, marriage and health consultation</li>
-                  <li>Property, finance and litigation guidance</li>
-                  <li>Name correction and spelling improvement</li>
-                  <li>Mobile number selection based on DOB</li>
-                  <li>Simple and affordable remedies</li>
-                  <li>Muhurat selection for important events</li>
-                </ul>
-              </div>
+                <li>
+                  <strong>शिक्षा, कैरियर, विवाह एवं स्वास्थ्य परामर्श</strong>
+                  <span>Education, Career, Marriage & Health Consultation</span>
+                </li>
+
+                <li>
+                  <strong>धन, मुकदमा एवं प्रॉपर्टी संबंधी मार्गदर्शन</strong>
+                  <span>Property, Finance & Litigation Guidance</span>
+                </li>
+
+                <li>
+                  <strong>नाम एवं स्पेलिंग सुधार</strong>
+                  <span>Name Correction & Spelling Improvement</span>
+                </li>
+
+                <li>
+                  <strong>जन्मतिथि अनुसार सही मोबाइल नम्बर चयन</strong>
+                  <span>Mobile Number Selection Based on DOB</span>
+                </li>
+
+                <li>
+                  <strong>कम खर्च वाले आसान उपाय</strong>
+                  <span>Simple & Affordable Remedies</span>
+                </li>
+
+                <li>
+                  <strong>शुभ कार्यों हेतु मुहूर्त विचार</strong>
+                  <span>Muhurat Selection For Important Events</span>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div className="blessing-card">
-
-          <p>एक बार सेवा का अवसर अवश्य दें।</p>
-
-          <p>Please give us the opportunity to serve you.</p>
-
-          <p>ईश्वर आपको सफल, सुखद एवं स्वस्थ जीवन प्रदान करें।</p>
-
-          <p>May God bless you with a successful, happy and healthy life.</p>
         </div>
 
         <div className="footer-copyright">

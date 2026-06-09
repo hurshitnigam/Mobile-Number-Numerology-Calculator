@@ -158,6 +158,17 @@ function App() {
         <p
           style={{
             fontSize: "24px",
+            textTransform: "uppercase",
+            opacity: 0.9,
+            marginBottom: "14px",
+          }}
+        >
+          श्री गणेशाय नमः
+        </p>
+
+        <p
+          style={{
+            fontSize: "24px",
             letterSpacing: "4px",
             textTransform: "uppercase",
             fontWeight: "600",
@@ -165,7 +176,7 @@ function App() {
             marginBottom: "14px",
           }}
         >
-          COSMIC COUNSELLAOR
+          The Cosmic Councillor
         </p>
 
         <h1
@@ -258,11 +269,11 @@ function App() {
       >
         <div className="footer-content">
           <div className="footer-image">
-            <img src="/public/cosmic-counsellor.jpeg" alt="Cosmic Counsellor" />
+            <img src="/cosmic-counsellor.jpeg" alt="Cosmic Counsellor" />
           </div>
 
           <div className="footer-details">
-            <h2 className="footer-title">COSMIC COUNSELLAOR</h2>
+            <h2 className="footer-title">The Cosmic Councillor</h2>
 
             <h3 className="footer-name">Vivek Nigam</h3>
 

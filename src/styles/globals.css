@@ -425,10 +425,6 @@ body {
 }
 
 .service-list li {
-  position: relative;
-
-  padding-left: 40px;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   padding-bottom: 18px;
@@ -438,35 +434,6 @@ body {
   border-bottom: none;
 
   padding-bottom: 0;
-}
-
-.service-list li::before {
-
-  position: absolute;
-
-  left: 0;
-
-  top: 0;
-
-  width: 26px;
-
-  height: 26px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #ffd700;
-
-  color: #1e1b4b;
-
-  border-radius: 50%;
-
-  font-weight: 700;
-
-  font-size: 14px;
 }
 
 .service-list strong {

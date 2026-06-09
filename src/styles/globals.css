@@ -148,6 +148,48 @@ body {
   border-bottom: none;
 }
 
+.contact-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.contact-icon {
+  font-size: 20px;
+}
+
+.whatsapp {
+  color: #25d366;
+}
+
+.instagram {
+  color: #e1306c;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.email {
+  color: #ffd700;
+}
+
+.contact-item a {
+  color: white;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #ffd700;
+}
+
 .footer {
   margin-top: 100px;
 
@@ -191,7 +233,9 @@ body {
 }
 
 .footer-title {
-  font-size: 34px;
+  text-transform: uppercase;
+
+  font-size: 28px;
 
   font-weight: 700;
 
@@ -274,6 +318,124 @@ body {
   gap: 24px;
 
   margin-top: 30px;
+}
+
+.consultation-section {
+  margin-top: 50px;
+}
+
+.consultation-title {
+  text-align: center;
+
+  color: #ffd700;
+
+  font-size: 32px;
+
+  margin-bottom: 35px;
+
+  font-weight: 700;
+}
+
+.consultation-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
+}
+
+.consultation-card {
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.consultation-card:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.consultation-card h4 {
+  color: #ffd700;
+
+  font-size: 24px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.consultation-card ul {
+  padding-left: 20px;
+}
+
+.consultation-card li {
+  margin-bottom: 14px;
+
+  line-height: 1.8;
+}
+
+.blessing-card {
+  margin-top: 40px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  color: #fff;
+}
+
+.blessing-icon {
+  font-size: 32px;
+
+  margin-bottom: 12px;
+}
+
+.blessing-card p {
+  margin-bottom: 10px;
+
+  line-height: 1.8;
+}
+
+.footer-copyright {
+  margin-top: 30px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-copyright p {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .consultation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-title {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 992px) {

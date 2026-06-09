@@ -23,6 +23,20 @@ export default function NameForm({
     setResult(null);
   }
 
+  function handleDobChange(e) {
+    let value = e.target.value.replace(/\D/g, "");
+
+    if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2);
+    }
+
+    if (value.length > 5) {
+      value = value.slice(0, 5) + "/" + value.slice(5);
+    }
+
+    setDob(value.slice(0, 10));
+  }
+
   return (
     <form onSubmit={onCalculate} className="card">
       <div
@@ -56,11 +70,11 @@ export default function NameForm({
 
         <input
           className="input"
-          type="date"
-          required
-          placeholder="Enter your DOB"
+          type="text"
+          placeholder="DD/MM/YYYY"
+          maxLength={10}
           value={dob}
-          onChange={(e) => setDob(e.target.value)}
+          onChange={handleDobChange}
         />
 
         <input

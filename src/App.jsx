@@ -3,6 +3,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 motion;
 import { FaMobileAlt, FaUserAlt } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebook,
+  FaEnvelope,
+} from "react-icons/fa";
 
 import NameForm from "./components/NameForm";
 import NameResult from "./components/NameResult";
@@ -176,7 +182,7 @@ function App() {
             marginBottom: "14px",
           }}
         >
-          The Cosmic Councillor
+          The cosmic counsellor
         </p>
 
         <h1
@@ -186,7 +192,7 @@ function App() {
             fontWeight: "700",
           }}
         >
-          Advance Mobile Number Numerology
+          Advance Name and Mobile Number Numerology
         </h1>
 
         <p
@@ -231,7 +237,7 @@ function App() {
 
           <CompatibilityCard compatibility={result.compatibility} />
 
-          <div
+          {/* <div
             className="card"
             style={{
               marginTop: "32px",
@@ -257,7 +263,7 @@ function App() {
             <button className="btn" onClick={() => generatePdf(result)}>
               📄 Download PDF Report
             </button>
-          </div>
+          </div> */}
         </>
       )}
 
@@ -273,21 +279,24 @@ function App() {
           </div>
 
           <div className="footer-details">
-            <h2 className="footer-title">The Cosmic Councillor</h2>
+            <h2 className="footer-title">The cosmic counsellor</h2>
 
             <h3 className="footer-name">Vivek Nigam</h3>
 
-            <p className="footer-role">( Numerologist, Astrologer, Vastu Expert )</p>
-
-            <p className="about">
-              Advance Mobile Number Numerology Analysis based on Mulank,
-              Bhagyank, Namank and Mobile Number combinations. Get detailed
-              insights about your strengths, challenges, compatibility and
-              mobile number vibrations.
+            <p className="footer-role">
+              ( Numerologist, Astrologer, Vastu Expert )
             </p>
 
-            <p>
-              💬 WhatsApp:
+            <p className="about">
+              Expert in Advance Mobile Number Numerology Analysis based on
+              Mulank, Bhagyank, Namank and Mobile Number combinations. Get
+              detailed insights about your strengths, challenges, compatibility
+              and mobile number vibrations.
+            </p>
+
+            <p className="contact-item">
+              <FaWhatsapp className="contact-icon whatsapp" />
+
               <a
                 href="https://wa.me/919450122288"
                 target="_blank"
@@ -297,33 +306,90 @@ function App() {
               </a>
             </p>
 
-            <p>
-              📧 Email:
+            <p className="contact-item">
+              <FaEnvelope className="contact-icon email" />
+
               <a href="mailto:mr.bhanunig@gmail.com">mr.bhanunig@gmail.com</a>
             </p>
 
-            <p>
-              📸 Instagram:
+            <p className="contact-item">
+              <FaInstagram className="contact-icon instagram" />
+
               <a
                 href="https://www.instagram.com/thecosmiccounselaor/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @thecosmiccounselaor
+                @thecosmiccounsellor
               </a>
             </p>
 
-            <p>👍 Facebook: Astro Vivek G</p>
+            <p className="contact-item">
+              <FaFacebook className="contact-icon facebook" />
+
+              <a
+                href="https://www.facebook.com/share/1D2WBcPpjk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Astro Vivek G
+              </a>
+            </p>
+
           </div>
         </div>
 
         <div className="footer-bottom">
+          <div className="consultation-section">
+            <h3 className="consultation-title">
+              ज्योतिष परामर्श / Astrology Consultation
+            </h3>
+
+            <div className="consultation-grid">
+              <div className="consultation-card">
+                <ul>
+                  <li>कुण्डली विश्लेषण एवं जीवन मार्गदर्शन</li>
+                  <li>शिक्षा, कैरियर, विवाह एवं स्वास्थ्य परामर्श</li>
+                  <li>धन, मुकदमा एवं प्रॉपर्टी संबंधी मार्गदर्शन</li>
+                  <li>नाम एवं स्पेलिंग सुधार</li>
+                  <li>जन्मतिथि अनुसार मोबाइल नम्बर चयन</li>
+                  <li>कम खर्च वाले आसान उपाय</li>
+                  <li>शुभ कार्यों हेतु मुहूर्त विचार</li>
+                </ul>
+              </div>
+
+              <div className="consultation-card">
+                <ul>
+                  <li>Horoscope analysis and guidance</li>
+                  <li>Education, career, marriage and health consultation</li>
+                  <li>Property, finance and litigation guidance</li>
+                  <li>Name correction and spelling improvement</li>
+                  <li>Mobile number selection based on DOB</li>
+                  <li>Simple and affordable remedies</li>
+                  <li>Muhurat selection for important events</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="blessing-card">
+
+          <p>एक बार सेवा का अवसर अवश्य दें।</p>
+
+          <p>Please give us the opportunity to serve you.</p>
+
+          <p>ईश्वर आपको सफल, सुखद एवं स्वस्थ जीवन प्रदान करें।</p>
+
+          <p>May God bless you with a successful, happy and healthy life.</p>
+        </div>
+
+        <div className="footer-copyright">
           <p>
-            Disclaimer: Numerology guidance is intended for informational and
-            self-reflection purposes only.
+            Disclaimer: Numerology and Astrology guidance is intended for
+            informational and self-reflection purposes only.
           </p>
 
-          <p>© 2026 Cosmic Counsellaor. All Rights Reserved.</p>
+          <p>© 2026 The Cosmic Counsellor. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

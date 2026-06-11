@@ -1,80 +1,68 @@
+const compatibilityMap = {
+  1: {
+    friendly: [1, 2, 3, 5, 6, 9],
+    enemy: [8],
+  },
+
+  2: {
+    friendly: [1, 2, 3, 5],
+    enemy: [8, 4, 9],
+  },
+
+  3: {
+    friendly: [1, 2, 3, 5, 7],
+    enemy: [6],
+  },
+
+  4: {
+    friendly: [1, 5, 6, 7],
+    enemy: [2, 4, 8, 9],
+  },
+
+  5: {
+    friendly: [1, 2, 3, 5, 6],
+    enemy: [],
+  },
+
+  6: {
+    friendly: [1, 5, 6, 7],
+    enemy: [3],
+  },
+
+  7: {
+    friendly: [1, 3, 5, 6],
+    enemy: [],
+  },
+
+  8: {
+    friendly: [3, 4, 5, 6, 7],
+    enemy: [1, 2, 4, 8],
+  },
+
+  9: {
+    friendly: [1, 3, 5],
+    enemy: [4, 2],
+  },
+};
+
 export function getCompatibility(firstNumber, secondNumber) {
-  const pair1 = `${firstNumber}${secondNumber}`;
+  const data = compatibilityMap[firstNumber];
 
-  const pair2 = `${secondNumber}${firstNumber}`;
+  if (!data) {
+    return {
+      status: "Neutral",
+      color: "neutral",
+    };
+  }
 
-  const friendly = [
-    "15",
-    "51",
-    "17",
-    "71",
-    "19",
-    "91",
-    "25",
-    "52",
-    "29",
-    "92",
-    "37",
-    "73",
-    "38",
-    "83",
-    "47",
-    "74",
-    "57",
-    "75",
-    "35",
-    "53",
-    "36",
-    "63",
-    "39",
-    "93",
-    "59",
-    "95",
-    "67",
-    "76",
-    "69",
-    "96",
-    "78",
-    "87",
-    "89",
-    "98",
-  ];
-
-  const enemy = [
-    "14",
-    "41",
-    "16",
-    "61",
-    "18",
-    "81",
-    "23",
-    "32",
-    "26",
-    "62",
-    "27",
-    "72",
-    "28",
-    "82",
-    "34",
-    "43",
-    "45",
-    "54",
-    "46",
-    "64",
-    "48",
-    "84",
-    "68",
-    "86",
-  ];
-
-  if (friendly.includes(pair1) || friendly.includes(pair2)) {
+  if (data.friendly.includes(secondNumber)) {
     return {
       status: "Friendly",
       color: "positive",
     };
   }
 
-  if (enemy.includes(pair1) || enemy.includes(pair2)) {
+  if (data.enemy.includes(secondNumber)) {
     return {
       status: "Enemy",
       color: "negative",

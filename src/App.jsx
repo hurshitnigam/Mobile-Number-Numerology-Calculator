@@ -268,16 +268,16 @@ function App() {
         <div className="footer-content">
           <div className="footer-image">
             <img src="/cosmic-counsellor.jpeg" alt="Cosmic Counsellor" />
+
+            <h3 className="footer-name">Vivek Nigam</h3>
+
+            <strong className="footer-image-role">
+              Numerologist • Astrologer • Vastu Expert
+            </strong>
           </div>
 
           <div className="footer-details">
             <h2 className="footer-title">The cosmic counsellor</h2>
-
-            <h3 className="footer-name">Vivek Nigam</h3>
-
-            <p className="footer-role">
-              ( Numerologist, Astrologer, Vastu Expert )
-            </p>
 
             <p className="about">
               Expert in Advance Mobile Number Numerology Analysis based on
@@ -326,7 +326,6 @@ function App() {
                 </a>
               </div>
             </div>
-            
           </div>
         </div>
 

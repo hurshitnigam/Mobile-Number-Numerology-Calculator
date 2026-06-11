@@ -239,63 +239,25 @@ function App() {
           <MobileResult mobile={result.mobile} />
 
           <CompatibilityCard compatibility={result.compatibility} />
-
-          {/* <div
-            className="card"
-            style={{
-              marginTop: "32px",
-              textAlign: "center",
-            }}
-          >
-            <h2>Final Guidance</h2>
-
-            <br />
-
-            <p>
-              Mobile numerology should be interpreted together with Mulank,
-              Bhagyank and Full Name.
-            </p>
-
-            <br />
-
-            <strong>Ask expert before changing mobile number</strong>
-
-            <br />
-            <br />
-
-            <button className="btn" onClick={() => generatePdf(result)}>
-              📄 Download PDF Report
-            </button>
-          </div> */}
         </>
       )}
 
-      <div className="analysis-note">
-        <div className="analysis-note-icon">⚠️</div>
-
-        <div className="analysis-note-content">
-          <h3>महत्वपूर्ण सूचना / Important Notice</h3>
+      {result && (
+        <div className="analysis-note">
+          <h3>⚠️ महत्वपूर्ण सूचना</h3>
 
           <p>
-            एप्लीकेशन की सीमाएँ हैं, इसलिए यह बहुत गहराई से विश्लेषण नहीं कर
-            सकती।
-            <br />
-            <strong>
-              डीप एनालिसिस और सटीक परिणाम के लिए कृपया सम्पर्क करें।
-            </strong>
+            एप्लीकेशन की सीमाओं के कारण यह बहुत गहराई से विश्लेषण नहीं कर सकती।{" "}
+            डीप एनालिसिस एवं सटीक परिणाम के लिए कृपया सम्पर्क करें।
           </p>
 
           <p>
-            This application has its limitations and cannot perform an in-depth
-            analysis.
-            <br />
-            <strong>
-              For detailed analysis and more accurate guidance, please contact
-              us.
-            </strong>
+            This application has limitations and cannot perform an in-depth
+            analysis. Please contact us for detailed analysis and accurate
+            guidance.
           </p>
         </div>
-      </div>
+      )}
 
       <footer
         className="footer"
@@ -324,47 +286,47 @@ function App() {
               and mobile number vibrations.
             </p>
 
-            <p className="contact-item">
-              <FaWhatsapp className="contact-icon whatsapp" />
-
+            <div className="contact-buttons">
               <a
                 href="https://wa.me/919450122288"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="contact-btn whatsapp-btn"
               >
-                +91 9450122288
+                💬 WhatsApp
               </a>
-            </p>
 
-            <p className="contact-item">
-              <FaEnvelope className="contact-icon email" />
-
-              <a href="mailto:mr.bhanunig@gmail.com">mr.bhanunig@gmail.com</a>
-            </p>
-
-            <p className="contact-item">
-              <FaInstagram className="contact-icon instagram" />
-
-              <a
-                href="https://www.instagram.com/thecosmiccounselaor/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @thecosmiccounsellor
+              <a href="tel:+919450122288" className="contact-btn call-btn">
+                📞 Call Now
               </a>
-            </p>
+            </div>
 
-            <p className="contact-item">
-              <FaFacebook className="contact-icon facebook" />
+            <div className="social-section">
+              <p className="social-title">
+                To know more about us, follow us on
+              </p>
 
-              <a
-                href="https://www.facebook.com/share/1D2WBcPpjk/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Astro Vivek G
-              </a>
-            </p>
+              <div className="social-buttons">
+                <a
+                  href="https://www.instagram.com/thecosmiccounselaor/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-btn instagram-btn"
+                >
+                  📷 Instagram
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/1D2WBcPpjk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-btn facebook-btn"
+                >
+                  👍 Facebook
+                </a>
+              </div>
+            </div>
+            
           </div>
         </div>
 
@@ -374,45 +336,52 @@ function App() {
               🔮 ज्योतिष परामर्श / Astrology Consultation
             </h3>
 
-            <div className="consultation-card">
-              <ul className="service-list">
-                <li>
-                  <strong>कुण्डली विश्लेषण एवं जीवन मार्गदर्शन</strong>
-                  <strong>Horoscope Analysis & Life Guidance</strong>
-                </li>
+            <div className="services-container">
+              <div className="services-row">
+                <div className="service-circle">
+                  <span>📜</span>
+                  <h4>कुण्डली विश्लेषण</h4>
+                  <p>Horoscope Analysis</p>
+                </div>
 
-                <li>
-                  <strong>शिक्षा, कैरियर, विवाह एवं स्वास्थ्य परामर्श</strong>
-                  <strong>
-                    Education, Career, Marriage & Health Consultation
-                  </strong>
-                </li>
+                <div className="service-circle">
+                  <span>🎓</span>
+                  <h4>शिक्षा एवं कैरियर</h4>
+                  <p>Education & Career</p>
+                </div>
 
-                <li>
-                  <strong>धन, मुकदमा एवं प्रॉपर्टी संबंधी मार्गदर्शन</strong>
-                  <strong>Property, Finance & Litigation Guidance</strong>
-                </li>
+                <div className="service-circle">
+                  <span>💍</span>
+                  <h4>विवाह एवं स्वास्थ्य</h4>
+                  <p>Marriage & Health</p>
+                </div>
 
-                <li>
-                  <strong>नाम एवं स्पेलिंग सुधार</strong>
-                  <strong>Name Correction & Spelling Improvement</strong>
-                </li>
+                <div className="service-circle">
+                  <span>💰</span>
+                  <h4>धन एवं प्रॉपर्टी</h4>
+                  <p>Finance & Property</p>
+                </div>
+              </div>
 
-                <li>
-                  <strong>जन्मतिथि अनुसार सही मोबाइल नम्बर चयन</strong>
-                  <strong>Mobile Number Selection Based on DOB</strong>
-                </li>
+              <div className="services-row second row">
+                <div className="service-circle">
+                  <span>✍️</span>
+                  <h4>नाम सुधार</h4>
+                  <p>Name Correction</p>
+                </div>
 
-                <li>
-                  <strong>कम खर्च वाले आसान उपाय</strong>
-                  <strong>Simple & Affordable Remedies</strong>
-                </li>
+                <div className="service-circle">
+                  <span>📱</span>
+                  <h4>मोबाइल नम्बर चयन</h4>
+                  <p>Mobile Selection</p>
+                </div>
 
-                <li>
-                  <strong>शुभ कार्यों हेतु मुहूर्त विचार</strong>
-                  <strong>Muhurat Selection For Important Events</strong>
-                </li>
-              </ul>
+                <div className="service-circle">
+                  <span>🕉️</span>
+                  <h4>मुहूर्त एवं उपाय</h4>
+                  <p>Muhurat & Remedies</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

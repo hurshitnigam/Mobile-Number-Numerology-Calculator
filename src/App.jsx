@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 import { supabase } from "./supabase";
+import CountUp from "react-countup";
 
 import { motion } from "framer-motion";
 motion;
 import { FaMobileAlt, FaUserAlt } from "react-icons/fa";
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebook,
-  FaEnvelope,
-} from "react-icons/fa";
-
 import NameForm from "./components/NameForm";
 import NameResult from "./components/NameResult";
 import MobileResult from "./components/MobileResult";
@@ -23,7 +17,6 @@ import { calculateMobile } from "./utils/calculateMobile";
 import { NUMBER_INFO } from "./data/numberInfo";
 import { getCompatibility } from "./utils/calculateCompatibility";
 import CompatibilityCard from "./components/CompatibilityCard";
-// import { generatePdf } from "./reports/generatePdf";
 
 <motion.section
   initial={{
@@ -111,25 +104,40 @@ function App() {
 
   const [result, setResult] = useState(null);
 
+  const [visitorCount, setVisitorCount] = useState(0);
+
   useEffect(() => {
-    console.log(import.meta.env.VITE_SUPABASE_URL);
+    async function getCount() {
+      const { count, error } = await supabase
+        .from("visits")
+        .select("id", { count: "exact", head: true });
 
-    async function test() {
-      const { data, error } = await supabase.from("test").select("*");
-
-      console.log("Data:", data);
-      console.log("Error:", error);
+      if (!error) {
+        setVisitorCount(count || 0);
+      }
     }
 
-    test();
+    getCount();
   }, []);
 
-  function handleCalculate(e) {
+  async function handleCalculate(e) {
     e.preventDefault();
 
     if (mobile.trim().length !== 10) {
       alert("Please enter a valid 10 digit mobile number");
       return;
+    }
+
+    await supabase.from("stats").insert([
+      {
+        mobile: mobile,
+      },
+    ]);
+
+    const { error } = await supabase.from("visits").insert([{}]);
+
+    if (!error) {
+      setVisitorCount((prev) => prev + 1);
     }
 
     const name = calculateName(first, middle, last);
@@ -165,6 +173,35 @@ function App() {
 
   return (
     <div className="container">
+      <div className="hero-counter">
+        <p className="counter-title"> Happy Users</p>
+
+        <div className="digit-container">
+          {visitorCount
+            .toLocaleString()
+            .split("")
+            .map((digit, index) =>
+              digit === "," ? (
+                <span key={index} className="digit-comma">
+                </span>
+              ) : (
+                <motion.div
+                  key={index}
+                  className="digit-box"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: index * 0.08,
+                    duration: 0.35,
+                  }}
+                >
+                  {digit}
+                </motion.div>
+              ),
+            )}
+        </div>
+      </div>
+
       <section
         style={{
           padding: "60px 30px",

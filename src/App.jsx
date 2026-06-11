@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "./supabase";
 
 import { motion } from "framer-motion";
 motion;
@@ -110,6 +111,19 @@ function App() {
 
   const [result, setResult] = useState(null);
 
+  useEffect(() => {
+    console.log(import.meta.env.VITE_SUPABASE_URL);
+
+    async function test() {
+      const { data, error } = await supabase.from("test").select("*");
+
+      console.log("Data:", data);
+      console.log("Error:", error);
+    }
+
+    test();
+  }, []);
+
   function handleCalculate(e) {
     e.preventDefault();
 
@@ -161,17 +175,6 @@ function App() {
           marginBottom: "32px",
         }}
       >
-        <p
-          style={{
-            fontSize: "24px",
-            textTransform: "uppercase",
-            opacity: 0.9,
-            marginBottom: "14px",
-          }}
-        >
-          श्री गणेशाय नमः
-        </p>
-
         <p
           style={{
             fontSize: "24px",
@@ -267,10 +270,37 @@ function App() {
         </>
       )}
 
+      <div className="analysis-note">
+        <div className="analysis-note-icon">⚠️</div>
+
+        <div className="analysis-note-content">
+          <h3>महत्वपूर्ण सूचना / Important Notice</h3>
+
+          <p>
+            एप्लीकेशन की सीमाएँ हैं, इसलिए यह बहुत गहराई से विश्लेषण नहीं कर
+            सकती।
+            <br />
+            <strong>
+              डीप एनालिसिस और सटीक परिणाम के लिए कृपया सम्पर्क करें।
+            </strong>
+          </p>
+
+          <p>
+            This application has its limitations and cannot perform an in-depth
+            analysis.
+            <br />
+            <strong>
+              For detailed analysis and more accurate guidance, please contact
+              us.
+            </strong>
+          </p>
+        </div>
+      </div>
+
       <footer
         className="footer"
         style={{
-          marginTop: "100px",
+          marginTop: "50px",
         }}
       >
         <div className="footer-content">
@@ -348,37 +378,39 @@ function App() {
               <ul className="service-list">
                 <li>
                   <strong>कुण्डली विश्लेषण एवं जीवन मार्गदर्शन</strong>
-                  <span>Horoscope Analysis & Life Guidance</span>
+                  <strong>Horoscope Analysis & Life Guidance</strong>
                 </li>
 
                 <li>
                   <strong>शिक्षा, कैरियर, विवाह एवं स्वास्थ्य परामर्श</strong>
-                  <span>Education, Career, Marriage & Health Consultation</span>
+                  <strong>
+                    Education, Career, Marriage & Health Consultation
+                  </strong>
                 </li>
 
                 <li>
                   <strong>धन, मुकदमा एवं प्रॉपर्टी संबंधी मार्गदर्शन</strong>
-                  <span>Property, Finance & Litigation Guidance</span>
+                  <strong>Property, Finance & Litigation Guidance</strong>
                 </li>
 
                 <li>
                   <strong>नाम एवं स्पेलिंग सुधार</strong>
-                  <span>Name Correction & Spelling Improvement</span>
+                  <strong>Name Correction & Spelling Improvement</strong>
                 </li>
 
                 <li>
                   <strong>जन्मतिथि अनुसार सही मोबाइल नम्बर चयन</strong>
-                  <span>Mobile Number Selection Based on DOB</span>
+                  <strong>Mobile Number Selection Based on DOB</strong>
                 </li>
 
                 <li>
                   <strong>कम खर्च वाले आसान उपाय</strong>
-                  <span>Simple & Affordable Remedies</span>
+                  <strong>Simple & Affordable Remedies</strong>
                 </li>
 
                 <li>
                   <strong>शुभ कार्यों हेतु मुहूर्त विचार</strong>
-                  <span>Muhurat Selection For Important Events</span>
+                  <strong>Muhurat Selection For Important Events</strong>
                 </li>
               </ul>
             </div>
